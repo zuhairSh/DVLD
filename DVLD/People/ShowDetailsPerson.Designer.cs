@@ -71,7 +71,7 @@ namespace DVLD.People
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(662, 38);
+            this.linkLabel1.Location = new System.Drawing.Point(639, 38);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(118, 19);
             this.linkLabel1.TabIndex = 41;
@@ -84,7 +84,7 @@ namespace DVLD.People
             this.showDetails1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.showDetails1.Location = new System.Drawing.Point(-4, 60);
             this.showDetails1.Name = "showDetails1";
-            this.showDetails1.Size = new System.Drawing.Size(797, 308);
+            this.showDetails1.Size = new System.Drawing.Size(793, 308);
             this.showDetails1.TabIndex = 42;
             this.showDetails1.Load += new System.EventHandler(this.ShowDetails1_Load);
             // 
@@ -92,7 +92,7 @@ namespace DVLD.People
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(805, 419);
+            this.ClientSize = new System.Drawing.Size(790, 415);
             this.Controls.Add(this.showDetails1);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.btClose);

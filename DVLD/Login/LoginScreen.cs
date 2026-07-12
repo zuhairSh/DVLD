@@ -22,7 +22,8 @@ namespace DVLD.Users
 
         private void PictureBox1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
+
         }
 
        

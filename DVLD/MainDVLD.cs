@@ -55,9 +55,14 @@ namespace DVLD
         private void SingOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             clsSettingLogin.CurretUser = null;
+            this.Hide();
             _frmLogin.Show();
-            this.Close();
 
+        }
+
+        private void MainDVLD_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
