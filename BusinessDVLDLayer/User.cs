@@ -141,9 +141,20 @@ namespace BusinessDVLDLayer
             return clsDataUser.isUserNameUserAvailable(UserName);
         }
 
-        public static bool GetUserIDByUserName(string UserName,ref int UserID)
+        public static clsUser GetUserInfoByUserNameAndPassword(string UserName, string Password)
         {
-            return clsDataUser.GetUserIDByUserName(UserName, ref UserID);
+            int UserID = -1;
+            int PersonID = -1;
+
+            bool IsActive = false;
+
+            bool IsFound = clsDataUser.GetUserInfoByUserNameAndPassword
+                                (UserName, Password, ref UserID, ref PersonID, ref IsActive);
+
+            if (IsFound)
+                return new clsUser(UserID, PersonID, UserName, Password, IsActive);
+            else
+                return null;
         }
 
     }

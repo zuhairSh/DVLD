@@ -437,17 +437,22 @@ namespace DataDVLDLayer
             return isAvailable;
         }
 
-        public static bool GetUserIDByUserName(string UserName, ref int UserID)
+
+
+        public static bool GetUserInfoByUserNameAndPassword(string UserName, string Password
+            ,ref int UserID, ref int PersonID, ref bool IsActive)
         {
             bool isFound = false;
-
             SqlConnection connection = new SqlConnection(clsConnection.ConnectionString);
 
-            string query = @"select Users.UserID from Users where UserName = @UserName";
+            string quere = "select * from Users where UserName = @UserName " +
+                "and Password = @Password";
 
-            SqlCommand command = new SqlCommand(query, connection);
-
+            SqlCommand command = new SqlCommand(quere, connection);
             command.Parameters.AddWithValue("@UserName", UserName);
+            command.Parameters.AddWithValue("@Password", Password);
+
+
 
             try
             {
@@ -456,30 +461,31 @@ namespace DataDVLDLayer
 
                 if (reader.Read())
                 {
-                    // The record was found
                     isFound = true;
 
                     UserID = (int)reader["UserID"];
-                    
+                    PersonID = (int)reader["PersonID"];
+                    UserName = (string)reader["UserName"];
+                    Password = (string)reader["Password"];
+                    IsActive = (bool)reader["IsActive"];
+
                 }
                 else
                 {
                     isFound = false;
                 }
-
                 reader.Close();
-
 
             }
             catch (Exception ex)
             {
+
                 isFound = false;
             }
             finally
             {
                 connection.Close();
             }
-
             return isFound;
         }
     }

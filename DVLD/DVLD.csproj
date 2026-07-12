@@ -52,19 +52,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddEdit.cs">
+    <Compile Include="MyContors\AddEdit.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AddEdit.Designer.cs">
+    <Compile Include="MyContors\AddEdit.Designer.cs">
       <DependentUpon>AddEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="DisplayFilter.cs">
+    <Compile Include="MyContors\DisplayFilter.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="DisplayFilter.Designer.cs">
+    <Compile Include="MyContors\DisplayFilter.Designer.cs">
       <DependentUpon>DisplayFilter.cs</DependentUpon>
     </Compile>
-    <Compile Include="GlobalClass\SettingLogin.cs" />
+    <Compile Include="GlobalFiles\SettingLogin.cs" />
     <Compile Include="Users\AddEditUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,10 +77,10 @@
     <Compile Include="Users\ChangePassword.Designer.cs">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="Users\LoginScreen.cs">
+    <Compile Include="Login\LoginScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Users\LoginScreen.Designer.cs">
+    <Compile Include="Login\LoginScreen.Designer.cs">
       <DependentUpon>LoginScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Users\MainUsers.cs">
@@ -95,7 +95,7 @@
     <Compile Include="Users\ShowDetailsUser.Designer.cs">
       <DependentUpon>ShowDetailsUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="GlobalClass\Util.cs" />
+    <Compile Include="GlobalFiles\Util.cs" />
     <Compile Include="MainDVLD.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,16 +122,16 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ShowDetails.cs">
+    <Compile Include="MyContors\ShowDetails.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ShowDetails.Designer.cs">
+    <Compile Include="MyContors\ShowDetails.Designer.cs">
       <DependentUpon>ShowDetails.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddEdit.resx">
+    <EmbeddedResource Include="MyContors\AddEdit.resx">
       <DependentUpon>AddEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DisplayFilter.resx">
+    <EmbeddedResource Include="MyContors\DisplayFilter.resx">
       <DependentUpon>DisplayFilter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainDVLD.resx">
@@ -156,7 +156,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="ShowDetails.resx">
+    <EmbeddedResource Include="MyContors\ShowDetails.resx">
       <DependentUpon>ShowDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Users\AddEditUser.dje-NE.resx">
@@ -174,7 +174,7 @@
     <EmbeddedResource Include="Users\ChangePassword.resx">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Users\LoginScreen.resx">
+    <EmbeddedResource Include="Login\LoginScreen.resx">
       <DependentUpon>LoginScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Users\MainUsers.resx">
@@ -211,6 +211,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Female 512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GlobalFiles\Data.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

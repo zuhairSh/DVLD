@@ -14,16 +14,13 @@ namespace DVLD
 {
     public partial class MainDVLD : Form
     {
-
-        public MainDVLD()
+        LoginScreen _frmLogin;
+        public MainDVLD(LoginScreen frm )
         {
             InitializeComponent();
-        }
-
-        private void PictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
+            _frmLogin = frm;
+        }  
+   
 
         private void PebuleMenuItem_Click(object sender, EventArgs e)
         {
@@ -32,24 +29,7 @@ namespace DVLD
 
         }
 
-        private void BtClose_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Do you want to close Form ?", "Verified"
-                , MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-            {
-                this.Close();
-            }
-        }
-
-        private void PictureBox1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MainDVLD_Load(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void UsersToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -57,51 +37,25 @@ namespace DVLD
             mainUsers.ShowDialog();
         }
 
-        private bool _GetUserID()
-        {
-            return clsSettingLogin.GetUserID();
-        }
-
+        
         private void CurrentToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (_GetUserID())
-            {
-                ShowDetailsUser detailsUser = new ShowDetailsUser(clsSettingLogin.UserID);
-                detailsUser.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("The User is Not Found !!", "Verified"
-                , MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+           ShowDetailsUser detailsUser = new ShowDetailsUser(clsSettingLogin.CurretUser.UserID);
+           detailsUser.ShowDialog();
         }
 
         private void ChangePasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (_GetUserID())
-            {
-                ChangePassword changePassword = new ChangePassword(clsSettingLogin.UserID);
-                changePassword.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("The User is Not Found !!", "Verified"
-                , MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            
-
+            ChangePassword changePassword = new ChangePassword(clsSettingLogin.CurretUser.UserID);
+            changePassword.ShowDialog();
         }
+
+
 
         private void SingOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Users.LoginScreen loginScreen = new Users.LoginScreen();
-            loginScreen.textUserName.Text = clsSettingLogin.UserName;
-            loginScreen.textPassword.Text = clsSettingLogin.Password;
-            loginScreen.checkBox1.Checked = clsSettingLogin.isRemandUser;
-            this.Hide();
-            loginScreen.ShowDialog();
+            clsSettingLogin.CurretUser = null;
+            _frmLogin.Show();
             this.Close();
 
         }

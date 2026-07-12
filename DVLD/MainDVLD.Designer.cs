@@ -39,7 +39,6 @@ namespace DVLD
             this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.singOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btClose = new Guna.UI2.WinForms.Guna2Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -133,28 +132,6 @@ namespace DVLD
             this.singOutToolStripMenuItem.Text = "Sing out";
             this.singOutToolStripMenuItem.Click += new System.EventHandler(this.SingOutToolStripMenuItem_Click);
             // 
-            // btClose
-            // 
-            this.btClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btClose.Animated = true;
-            this.btClose.AutoRoundedCorners = true;
-            this.btClose.BackColor = System.Drawing.Color.Transparent;
-            this.btClose.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btClose.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btClose.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btClose.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btClose.FillColor = System.Drawing.Color.Silver;
-            this.btClose.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btClose.ForeColor = System.Drawing.Color.Transparent;
-            this.btClose.IndicateFocus = true;
-            this.btClose.Location = new System.Drawing.Point(12, 536);
-            this.btClose.Name = "btClose";
-            this.btClose.Size = new System.Drawing.Size(116, 37);
-            this.btClose.TabIndex = 41;
-            this.btClose.Text = "Close";
-            this.btClose.UseTransparentBackground = true;
-            this.btClose.Click += new System.EventHandler(this.BtClose_Click);
-            // 
             // MainDVLD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -162,12 +139,12 @@ namespace DVLD
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1132, 585);
-            this.Controls.Add(this.btClose);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
             this.Name = "MainDVLD";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "MainDVLD";
-            this.Load += new System.EventHandler(this.MainDVLD_Load);
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -179,7 +156,6 @@ namespace DVLD
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem applicationsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pebuleMenuItem;
-        private Guna.UI2.WinForms.Guna2Button btClose;
         private System.Windows.Forms.ToolStripMenuItem usersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem accountSettingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem currentToolStripMenuItem;
