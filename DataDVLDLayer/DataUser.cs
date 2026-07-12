@@ -361,5 +361,126 @@ namespace DataDVLDLayer
 
             return isFound;
         }
+
+        public static bool isAllowedForLogin(string UserName,string Password)
+        {
+            bool isAllowed = false;
+
+            string quere = "select found = 1 from Users" +
+                " where UserName = @UserName and Password = @Password and IsActive = 1";
+
+            SqlConnection connection = new SqlConnection(clsConnection.ConnectionString);
+            SqlCommand command = new SqlCommand(quere, connection);
+
+            command.Parameters.AddWithValue("@UserName", UserName);
+            command.Parameters.AddWithValue("@Password", Password);
+
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                isAllowed = reader.HasRows;
+
+                reader.Close();
+            }
+            catch(Exception ex)
+            {
+                isAllowed = false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return isAllowed;
+        }
+
+        public static bool isUserNameUserAvailable(string UserName)
+        {
+            bool isAvailable = false;
+
+            string quere = "select found = 1 from Users where UserName = @UserName ";
+
+            SqlConnection connection = new SqlConnection(clsConnection.ConnectionString);
+            SqlCommand command = new SqlCommand(quere, connection);
+
+            command.Parameters.AddWithValue("@UserName", UserName);
+
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    isAvailable = false;
+                }
+                else
+                {
+                    isAvailable = true;
+                }
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                isAvailable = false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return isAvailable;
+        }
+
+        public static bool GetUserIDByUserName(string UserName, ref int UserID)
+        {
+            bool isFound = false;
+
+            SqlConnection connection = new SqlConnection(clsConnection.ConnectionString);
+
+            string query = @"select Users.UserID from Users where UserName = @UserName";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@UserName", UserName);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    // The record was found
+                    isFound = true;
+
+                    UserID = (int)reader["UserID"];
+                    
+                }
+                else
+                {
+                    isFound = false;
+                }
+
+                reader.Close();
+
+
+            }
+            catch (Exception ex)
+            {
+                isFound = false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return isFound;
+        }
     }
 }

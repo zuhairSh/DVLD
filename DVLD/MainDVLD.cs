@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DVLD.GlobalClass;
+using DVLD.Users;
 
 namespace DVLD
 {
     public partial class MainDVLD : Form
     {
+
         public MainDVLD()
         {
             InitializeComponent();
@@ -54,13 +57,52 @@ namespace DVLD
             mainUsers.ShowDialog();
         }
 
+        private bool _GetUserID()
+        {
+            return clsSettingLogin.GetUserID();
+        }
+
         private void CurrentToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (_GetUserID())
+            {
+                ShowDetailsUser detailsUser = new ShowDetailsUser(clsSettingLogin.UserID);
+                detailsUser.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("The User is Not Found !!", "Verified"
+                , MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
         }
 
         private void ChangePasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (_GetUserID())
+            {
+                ChangePassword changePassword = new ChangePassword(clsSettingLogin.UserID);
+                changePassword.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("The User is Not Found !!", "Verified"
+                , MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            
+
+        }
+
+        private void SingOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Users.LoginScreen loginScreen = new Users.LoginScreen();
+            loginScreen.textUserName.Text = clsSettingLogin.UserName;
+            loginScreen.textPassword.Text = clsSettingLogin.Password;
+            loginScreen.checkBox1.Checked = clsSettingLogin.isRemandUser;
+            this.Hide();
+            loginScreen.ShowDialog();
+            this.Close();
 
         }
     }

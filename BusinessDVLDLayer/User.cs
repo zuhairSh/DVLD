@@ -131,5 +131,20 @@ namespace BusinessDVLDLayer
             }
         }
 
+        public static bool isAllowedLogin(string UserName, string Password)
+        {
+            return clsDataUser.isAllowedForLogin(UserName, Password);
+        }
+
+        public static bool isUserNameUserAvailable(string UserName)
+        {
+            return clsDataUser.isUserNameUserAvailable(UserName);
+        }
+
+        public static bool GetUserIDByUserName(string UserName,ref int UserID)
+        {
+            return clsDataUser.GetUserIDByUserName(UserName, ref UserID);
+        }
+
     }
 }

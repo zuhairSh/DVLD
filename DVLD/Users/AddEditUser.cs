@@ -56,6 +56,8 @@ namespace DVLD.Users
             {
                 labMode.Text = "Edit User";
 
+                displayFilter1.Enabled = false;
+
                 labUserID.Text = UserID.ToString();
 
 
@@ -117,7 +119,25 @@ namespace DVLD.Users
             }
             else { errorProvider1.SetError(textPassword2, ""); }
 
-            
+
+
+            if (clsUser.isUserNameUserAvailable(textUserName.Text))
+            {
+                errorProvider1.SetError(textUserName, "");
+               
+            }
+            else if (textUserName.Text == User.UserName)
+            {
+                errorProvider1.SetError(textUserName, "");
+
+            }
+            else 
+            {
+                errorProvider1.SetError(textUserName, "UserName used by another user !!");
+                isValid = false;
+            }
+
+
 
             return isValid;
 
@@ -127,26 +147,30 @@ namespace DVLD.Users
         {
             bool Verified = true;
 
-            if (displayFilter1.comboBox1.SelectedIndex == 0)
+            if (_Mode == enModes.eAddNew)
             {
-                int.TryParse(txt, out int PersonID);
-                if (clsUser.IsUserExistByPersonID(PersonID))
-                {
-                    return Verified = false;
 
+                if (displayFilter1.comboBox1.SelectedIndex == 0)
+                {
+                    int.TryParse(txt, out int PersonID);
+                    if (clsUser.IsUserExistByPersonID(PersonID))
+                    {
+                        return Verified = false;
+
+                    }
+                    else
+                        return Verified = true;
                 }
                 else
-                    return Verified = true;
-            }
-            else
-            {
-                if (clsUser.isUserExist(txt))
                 {
-                    return Verified = false;
+                    if (clsUser.isUserExist(txt))
+                    {
+                        return Verified = false;
 
+                    }
+                    else
+                        return Verified = true;
                 }
-                else
-                    return Verified = true;
             }
 
             return Verified;
@@ -271,7 +295,7 @@ namespace DVLD.Users
                 }
                 else
                 {
-                    MessageBox.Show("Please fill in the required fields", "Failed"
+                    MessageBox.Show("Please fill in the required fields correctly", "Failed"
                    , MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }

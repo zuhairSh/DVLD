@@ -102,8 +102,8 @@ namespace DVLD.Users
 
         private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            People.AddEditPerson AddEditForm = new AddEditPerson(_User.PersonID);
-            AddEditForm.ShowDialog();
+            AddEditUser addEditUser = new AddEditUser(_User.UserID);
+            addEditUser.ShowDialog();
             _LoadInfo();
         }
 

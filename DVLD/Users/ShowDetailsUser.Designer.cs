@@ -173,10 +173,10 @@ namespace DVLD.Users
             this.linkLabel1.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.Location = new System.Drawing.Point(645, 52);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(118, 19);
+            this.linkLabel1.Size = new System.Drawing.Size(102, 19);
             this.linkLabel1.TabIndex = 48;
             this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Edit Info Person";
+            this.linkLabel1.Text = "Edit Info User";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabel1_LinkClicked);
             // 
             // showDetails1

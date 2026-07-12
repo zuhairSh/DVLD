@@ -47,9 +47,9 @@ namespace DVLD.Users
             this.label2 = new System.Windows.Forms.Label();
             this.btClose = new Guna.UI2.WinForms.Guna2Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.showDetails1 = new DVLD.ShowDetails();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.btSave = new Guna.UI2.WinForms.Guna2Button();
+            this.showDetails1 = new DVLD.ShowDetails();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -80,6 +80,8 @@ namespace DVLD.Users
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox1.Controls.Add(this.btSave);
+            this.groupBox1.Controls.Add(this.btClose);
             this.groupBox1.Controls.Add(this.textConfirm);
             this.groupBox1.Controls.Add(this.textNewPassword);
             this.groupBox1.Controls.Add(this.textCurrontPassword);
@@ -93,7 +95,7 @@ namespace DVLD.Users
             this.groupBox1.Controls.Add(this.labUserID);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 349);
+            this.groupBox1.Location = new System.Drawing.Point(12, 323);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(722, 232);
             this.groupBox1.TabIndex = 60;
@@ -102,7 +104,7 @@ namespace DVLD.Users
             // 
             // textConfirm
             // 
-            this.textConfirm.Location = new System.Drawing.Point(171, 186);
+            this.textConfirm.Location = new System.Drawing.Point(512, 138);
             this.textConfirm.Name = "textConfirm";
             this.textConfirm.Size = new System.Drawing.Size(149, 22);
             this.textConfirm.TabIndex = 11;
@@ -145,7 +147,7 @@ namespace DVLD.Users
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(20, 188);
+            this.label3.Location = new System.Drawing.Point(361, 140);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(145, 20);
             this.label3.TabIndex = 6;
@@ -225,7 +227,7 @@ namespace DVLD.Users
             this.btClose.ForeColor = System.Drawing.Color.Transparent;
             this.btClose.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btClose.IndicateFocus = true;
-            this.btClose.Location = new System.Drawing.Point(12, 594);
+            this.btClose.Location = new System.Drawing.Point(8, 197);
             this.btClose.Name = "btClose";
             this.btClose.Size = new System.Drawing.Size(108, 29);
             this.btClose.TabIndex = 55;
@@ -245,15 +247,6 @@ namespace DVLD.Users
             this.label8.Text = "Change Password";
             this.label8.Click += new System.EventHandler(this.Label8_Click);
             // 
-            // showDetails1
-            // 
-            this.showDetails1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.showDetails1.Location = new System.Drawing.Point(12, 12);
-            this.showDetails1.Name = "showDetails1";
-            this.showDetails1.Size = new System.Drawing.Size(709, 331);
-            this.showDetails1.TabIndex = 57;
-            this.showDetails1.Load += new System.EventHandler(this.ShowDetails1_Load);
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
@@ -272,7 +265,7 @@ namespace DVLD.Users
             this.btSave.ForeColor = System.Drawing.Color.Transparent;
             this.btSave.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btSave.IndicateFocus = true;
-            this.btSave.Location = new System.Drawing.Point(609, 594);
+            this.btSave.Location = new System.Drawing.Point(597, 197);
             this.btSave.Name = "btSave";
             this.btSave.Size = new System.Drawing.Size(108, 29);
             this.btSave.TabIndex = 62;
@@ -280,14 +273,22 @@ namespace DVLD.Users
             this.btSave.UseTransparentBackground = true;
             this.btSave.Click += new System.EventHandler(this.BtSave_Click);
             // 
+            // showDetails1
+            // 
+            this.showDetails1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.showDetails1.Location = new System.Drawing.Point(12, 12);
+            this.showDetails1.Name = "showDetails1";
+            this.showDetails1.Size = new System.Drawing.Size(709, 305);
+            this.showDetails1.TabIndex = 57;
+            this.showDetails1.Load += new System.EventHandler(this.ShowDetails1_Load);
+            // 
             // ChangePassword
             // 
+            this.AcceptButton = this.btSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(729, 635);
-            this.Controls.Add(this.btSave);
+            this.ClientSize = new System.Drawing.Size(729, 564);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.btClose);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.linkLabel1);

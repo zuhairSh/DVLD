@@ -64,6 +64,7 @@
     <Compile Include="DisplayFilter.Designer.cs">
       <DependentUpon>DisplayFilter.cs</DependentUpon>
     </Compile>
+    <Compile Include="GlobalClass\SettingLogin.cs" />
     <Compile Include="Users\AddEditUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,7 +95,7 @@
     <Compile Include="Users\ShowDetailsUser.Designer.cs">
       <DependentUpon>ShowDetailsUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Util.cs" />
+    <Compile Include="GlobalClass\Util.cs" />
     <Compile Include="MainDVLD.cs">
       <SubType>Form</SubType>
     </Compile>

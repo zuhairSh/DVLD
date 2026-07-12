@@ -34,12 +34,12 @@ namespace DVLD
             this.applicationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pebuleMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btClose = new Guna.UI2.WinForms.Guna2Button();
             this.accountSettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.currentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.singOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.singOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btClose = new Guna.UI2.WinForms.Guna2Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,7 +55,7 @@ namespace DVLD
             this.accountSettingToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(505, 40);
+            this.menuStrip1.Size = new System.Drawing.Size(625, 40);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -88,28 +88,6 @@ namespace DVLD
             this.usersToolStripMenuItem.Text = "Users";
             this.usersToolStripMenuItem.Click += new System.EventHandler(this.UsersToolStripMenuItem_Click);
             // 
-            // btClose
-            // 
-            this.btClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btClose.Animated = true;
-            this.btClose.AutoRoundedCorners = true;
-            this.btClose.BackColor = System.Drawing.Color.Transparent;
-            this.btClose.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btClose.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btClose.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btClose.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btClose.FillColor = System.Drawing.Color.Silver;
-            this.btClose.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btClose.ForeColor = System.Drawing.Color.Transparent;
-            this.btClose.IndicateFocus = true;
-            this.btClose.Location = new System.Drawing.Point(12, 536);
-            this.btClose.Name = "btClose";
-            this.btClose.Size = new System.Drawing.Size(116, 37);
-            this.btClose.TabIndex = 41;
-            this.btClose.Text = "Close";
-            this.btClose.UseTransparentBackground = true;
-            this.btClose.Click += new System.EventHandler(this.BtClose_Click);
-            // 
             // accountSettingToolStripMenuItem
             // 
             this.accountSettingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -141,6 +119,11 @@ namespace DVLD
             this.changePasswordToolStripMenuItem.Text = "Change Password";
             this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.ChangePasswordToolStripMenuItem_Click);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(214, 6);
+            // 
             // singOutToolStripMenuItem
             // 
             this.singOutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("singOutToolStripMenuItem.Image")));
@@ -148,11 +131,29 @@ namespace DVLD
             this.singOutToolStripMenuItem.Name = "singOutToolStripMenuItem";
             this.singOutToolStripMenuItem.Size = new System.Drawing.Size(217, 38);
             this.singOutToolStripMenuItem.Text = "Sing out";
+            this.singOutToolStripMenuItem.Click += new System.EventHandler(this.SingOutToolStripMenuItem_Click);
             // 
-            // toolStripSeparator1
+            // btClose
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(214, 6);
+            this.btClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btClose.Animated = true;
+            this.btClose.AutoRoundedCorners = true;
+            this.btClose.BackColor = System.Drawing.Color.Transparent;
+            this.btClose.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btClose.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btClose.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btClose.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btClose.FillColor = System.Drawing.Color.Silver;
+            this.btClose.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btClose.ForeColor = System.Drawing.Color.Transparent;
+            this.btClose.IndicateFocus = true;
+            this.btClose.Location = new System.Drawing.Point(12, 536);
+            this.btClose.Name = "btClose";
+            this.btClose.Size = new System.Drawing.Size(116, 37);
+            this.btClose.TabIndex = 41;
+            this.btClose.Text = "Close";
+            this.btClose.UseTransparentBackground = true;
+            this.btClose.Click += new System.EventHandler(this.BtClose_Click);
             // 
             // MainDVLD
             // 
