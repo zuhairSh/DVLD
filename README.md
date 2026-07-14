@@ -18,7 +18,7 @@ The **DVLD System** provides a digital transformation for licensing authorities.
 
 ### 1. Authentication & Core Interface
 Secure access control and the main dashboard for navigation.
-![Login Screen](./images/login_1.jpg)
+![Login Screen](./images/Login_1.jpg)
 ![Main Dashboard](./images/main_screen.jpg)
 *   **Features:** Secure login, session management, and role-based access.
 
