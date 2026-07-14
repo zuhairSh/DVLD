@@ -32,6 +32,7 @@ namespace DVLD
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainDVLD));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.applicationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.applicationTypesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pebuleMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accountSettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,6 +40,7 @@ namespace DVLD
             this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.singOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.testTypesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,18 +56,30 @@ namespace DVLD
             this.accountSettingToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(505, 40);
+            this.menuStrip1.Size = new System.Drawing.Size(625, 40);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // applicationsToolStripMenuItem
             // 
+            this.applicationsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.applicationTypesToolStripMenuItem,
+            this.testTypesToolStripMenuItem});
             this.applicationsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("applicationsToolStripMenuItem.Image")));
             this.applicationsToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.applicationsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.applicationsToolStripMenuItem.Name = "applicationsToolStripMenuItem";
             this.applicationsToolStripMenuItem.Size = new System.Drawing.Size(140, 36);
             this.applicationsToolStripMenuItem.Text = "Applications";
+            // 
+            // applicationTypesToolStripMenuItem
+            // 
+            this.applicationTypesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("applicationTypesToolStripMenuItem.Image")));
+            this.applicationTypesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.applicationTypesToolStripMenuItem.Name = "applicationTypesToolStripMenuItem";
+            this.applicationTypesToolStripMenuItem.Size = new System.Drawing.Size(222, 38);
+            this.applicationTypesToolStripMenuItem.Text = " Application Types";
+            this.applicationTypesToolStripMenuItem.Click += new System.EventHandler(this.ApplicationTypesToolStripMenuItem_Click);
             // 
             // pebuleMenuItem
             // 
@@ -132,6 +146,15 @@ namespace DVLD
             this.singOutToolStripMenuItem.Text = "Sing out";
             this.singOutToolStripMenuItem.Click += new System.EventHandler(this.SingOutToolStripMenuItem_Click);
             // 
+            // testTypesToolStripMenuItem
+            // 
+            this.testTypesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("testTypesToolStripMenuItem.Image")));
+            this.testTypesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.testTypesToolStripMenuItem.Name = "testTypesToolStripMenuItem";
+            this.testTypesToolStripMenuItem.Size = new System.Drawing.Size(222, 38);
+            this.testTypesToolStripMenuItem.Text = "Test Types";
+            this.testTypesToolStripMenuItem.Click += new System.EventHandler(this.TestTypesToolStripMenuItem_Click);
+            // 
             // MainDVLD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -163,6 +186,8 @@ namespace DVLD
         private System.Windows.Forms.ToolStripMenuItem changePasswordToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem singOutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem applicationTypesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem testTypesToolStripMenuItem;
     }
 }
 

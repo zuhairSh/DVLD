@@ -52,6 +52,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationType\MainApplicationTypes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationType\MainApplicationTypes.Designer.cs">
+      <DependentUpon>MainApplicationTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationType\UpdateApplicationType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationType\UpdateApplicationType.Designer.cs">
+      <DependentUpon>UpdateApplicationType.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyContors\AddEdit.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -65,6 +77,18 @@
       <DependentUpon>DisplayFilter.cs</DependentUpon>
     </Compile>
     <Compile Include="GlobalFiles\SettingLogin.cs" />
+    <Compile Include="TestTypes\MainTestTypes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestTypes\MainTestTypes.Designer.cs">
+      <DependentUpon>MainTestTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestTypes\UpdateTestType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestTypes\UpdateTestType.Designer.cs">
+      <DependentUpon>UpdateTestType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Users\AddEditUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +152,12 @@
     <Compile Include="MyContors\ShowDetails.Designer.cs">
       <DependentUpon>ShowDetails.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ApplicationType\MainApplicationTypes.resx">
+      <DependentUpon>MainApplicationTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationType\UpdateApplicationType.resx">
+      <DependentUpon>UpdateApplicationType.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyContors\AddEdit.resx">
       <DependentUpon>AddEdit.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,6 +188,12 @@
     </Compile>
     <EmbeddedResource Include="MyContors\ShowDetails.resx">
       <DependentUpon>ShowDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestTypes\MainTestTypes.resx">
+      <DependentUpon>MainTestTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestTypes\UpdateTestType.resx">
+      <DependentUpon>UpdateTestType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Users\AddEditUser.dje-NE.resx">
       <DependentUpon>AddEditUser.cs</DependentUpon>

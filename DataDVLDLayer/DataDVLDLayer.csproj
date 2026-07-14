@@ -41,9 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataApplicationType.cs" />
     <Compile Include="DataConnection.cs" />
     <Compile Include="DataCountry.cs" />
     <Compile Include="DataPeople.cs" />
+    <Compile Include="DataTestTypes.cs" />
     <Compile Include="DataUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
