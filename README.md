@@ -64,13 +64,9 @@ See `DVLD_Diagram.pdf` for the complete ER diagram
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Visual Studio 2019+
+- Visual Studio 2019
 - .NET Framework 4.7+
-- SQL Server 2016+
-
-### Default Login
-- **Username**: admin
-- **Password**: (check database seed)
+- SQL Server 2016
 
 ## 🎬 Demo
 
