@@ -59,8 +59,7 @@ The system uses a relational database with 15+ tables including:
 - `DetainedLicenses`, `LicenseClasses`
 
 See `DVLD_Diagram.pdf` for the complete ER diagram 
-**[DVLD System Diagram]
-(https://github.com/zuhairSh/DVLD-System_RelationalSchem)**
+**[DVLD System Diagram](https://github.com/zuhairSh/DVLD-System_RelationalSchem)**
 
 ## 🚀 Getting Started
 
