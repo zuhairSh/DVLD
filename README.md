@@ -2,7 +2,7 @@
 
 A comprehensive **Full-Stack Desktop Application** for managing driving licenses, vehicle registrations, tests, and related services. Built from scratch using C# and SQL Server with a professional 3-tier architecture.
 
-![DVLD Setup](https://raw.githubusercontent.com/zuhairSh/DVLD/main/Screenshots/login.png)
+![DVLD Setup](images/main_screen.jpg)
 
 ## 🎯 Overview
 
