@@ -12,7 +12,7 @@ namespace BusinessDVLDLayer
     {
         public int ApplicationTypeID { get; set; }
         public string ApplicationTypeTitle { get; set; }
-        public decimal ApplicationFees { get; set; }
+        public float ApplicationFees { get; set; }
 
         public clsApplicationTypes()
         {
@@ -22,7 +22,7 @@ namespace BusinessDVLDLayer
         }
 
         private clsApplicationTypes(int ApplicationTypeID, string ApplicationTypeTitle
-            ,  decimal ApplicationTypeFees)
+            , float ApplicationTypeFees)
         {
             this.ApplicationTypeID = ApplicationTypeID;
             this.ApplicationTypeTitle = ApplicationTypeTitle;
@@ -53,7 +53,7 @@ namespace BusinessDVLDLayer
         public static clsApplicationTypes FindApplicationType(int ApplicationTypeID)
         {
             string ApplicationTypeTitle = "";
-            decimal ApplicationTypeFees = 0;
+            float ApplicationTypeFees = 0;
 
             if (clsDataApplicationType.GetApplicationTypeInfoByID(ApplicationTypeID,
                 ref ApplicationTypeTitle, ref ApplicationTypeFees))

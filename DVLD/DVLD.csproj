@@ -64,19 +64,175 @@
     <Compile Include="ApplicationType\UpdateApplicationType.Designer.cs">
       <DependentUpon>UpdateApplicationType.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyContors\AddEdit.cs">
+    <Compile Include="DL Services\DetainLicense\NewDetainLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DL Services\DetainLicense\NewDetainLicense.Designer.cs">
+      <DependentUpon>NewDetainLicense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DL Services\International Driving License\ManageInternationalDrivingLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DL Services\International Driving License\ManageInternationalDrivingLicense.Designer.cs">
+      <DependentUpon>ManageInternationalDrivingLicense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DL Services\International Driving License\NewInternationalDrivingLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DL Services\International Driving License\NewInternationalDrivingLicense.Designer.cs">
+      <DependentUpon>NewInternationalDrivingLicense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DL Services\LocalDrivingLicenseApplication\AddEditLocalLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DL Services\LocalDrivingLicenseApplication\AddEditLocalLicense.Designer.cs">
+      <DependentUpon>AddEditLocalLicense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DL Services\LocalDrivingLicenseApplication\ManageLocalDrivingLicenseApplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DL Services\LocalDrivingLicenseApplication\ManageLocalDrivingLicenseApplication.Designer.cs">
+      <DependentUpon>ManageLocalDrivingLicenseApplication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DL Services\LocalDrivingLicenseApplication\ShowApplicationInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DL Services\LocalDrivingLicenseApplication\ShowApplicationInfo.Designer.cs">
+      <DependentUpon>ShowApplicationInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DL Services\ReleaseLicense\MainDetainedLicenses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DL Services\ReleaseLicense\MainDetainedLicenses.Designer.cs">
+      <DependentUpon>MainDetainedLicenses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DL Services\ReleaseLicense\ReleaseLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DL Services\ReleaseLicense\ReleaseLicense.Designer.cs">
+      <DependentUpon>ReleaseLicense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DL Services\RenewLocalDrivingLicense\RenewLocalDrivingLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DL Services\RenewLocalDrivingLicense\RenewLocalDrivingLicense.Designer.cs">
+      <DependentUpon>RenewLocalDrivingLicense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DL Services\ReplacementDamagedLostLicenses\ReplacementDamagedLostLicenses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DL Services\ReplacementDamagedLostLicenses\ReplacementDamagedLostLicenses.Designer.cs">
+      <DependentUpon>ReplacementDamagedLostLicenses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Drivers\MainDrivers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Drivers\MainDrivers.Designer.cs">
+      <DependentUpon>MainDrivers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="License\IssueDrivingLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="License\IssueDrivingLicense.Designer.cs">
+      <DependentUpon>IssueDrivingLicense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="License\ShowInternationaLicenseInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="License\ShowInternationaLicenseInfo.Designer.cs">
+      <DependentUpon>ShowInternationaLicenseInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="License\ShowLicenseHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="License\ShowLicenseHistory.Designer.cs">
+      <DependentUpon>ShowLicenseHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="License\ShowLicenseInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="License\ShowLicenseInfo.Designer.cs">
+      <DependentUpon>ShowLicenseInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyContols\AddEdit.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MyContors\AddEdit.Designer.cs">
+    <Compile Include="MyContols\AddEdit.Designer.cs">
       <DependentUpon>AddEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyContors\DisplayFilter.cs">
+    <Compile Include="MyContols\ApplicationInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MyContors\DisplayFilter.Designer.cs">
+    <Compile Include="MyContols\ApplicationInfo.Designer.cs">
+      <DependentUpon>ApplicationInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyContols\DisplayFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyContols\DisplayFilter.Designer.cs">
       <DependentUpon>DisplayFilter.cs</DependentUpon>
     </Compile>
     <Compile Include="GlobalFiles\SettingLogin.cs" />
+    <Compile Include="MyContols\FilterLicense.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyContols\FilterLicense.Designer.cs">
+      <DependentUpon>FilterLicense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyContols\InternationalLicenseInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyContols\InternationalLicenseInfo.Designer.cs">
+      <DependentUpon>InternationalLicenseInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyContols\lDrivingLicenseApplicationInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyContols\lDrivingLicenseApplicationInfo.Designer.cs">
+      <DependentUpon>lDrivingLicenseApplicationInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyContols\LicenseInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyContols\LicenseInfo.Designer.cs">
+      <DependentUpon>LicenseInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyContols\ScheduledTest.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyContols\ScheduledTest.Designer.cs">
+      <DependentUpon>ScheduledTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyContols\ScheduleTest .cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyContols\ScheduleTest .Designer.cs">
+      <DependentUpon>ScheduleTest .cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyContols\ShowLicensesHistory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyContols\ShowLicensesHistory.Designer.cs">
+      <DependentUpon>ShowLicensesHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestAppointment\ListTestAppointments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestAppointment\ListTestAppointments.Designer.cs">
+      <DependentUpon>ListTestAppointments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestAppointment\ScheduleTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestAppointment\ScheduleTest.Designer.cs">
+      <DependentUpon>ScheduleTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestAppointment\TakeTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestAppointment\TakeTest.Designer.cs">
+      <DependentUpon>TakeTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="TestTypes\MainTestTypes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,10 +302,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="MyContors\ShowDetails.cs">
+    <Compile Include="MyContols\ShowDetails.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MyContors\ShowDetails.Designer.cs">
+    <Compile Include="MyContols\ShowDetails.Designer.cs">
       <DependentUpon>ShowDetails.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="ApplicationType\MainApplicationTypes.resx">
@@ -158,14 +314,83 @@
     <EmbeddedResource Include="ApplicationType\UpdateApplicationType.resx">
       <DependentUpon>UpdateApplicationType.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyContors\AddEdit.resx">
+    <EmbeddedResource Include="DL Services\DetainLicense\NewDetainLicense.resx">
+      <DependentUpon>NewDetainLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DL Services\International Driving License\ManageInternationalDrivingLicense.resx">
+      <DependentUpon>ManageInternationalDrivingLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DL Services\International Driving License\NewInternationalDrivingLicense.resx">
+      <DependentUpon>NewInternationalDrivingLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DL Services\LocalDrivingLicenseApplication\AddEditLocalLicense.resx">
+      <DependentUpon>AddEditLocalLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DL Services\LocalDrivingLicenseApplication\ManageLocalDrivingLicenseApplication.resx">
+      <DependentUpon>ManageLocalDrivingLicenseApplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DL Services\LocalDrivingLicenseApplication\ShowApplicationInfo.resx">
+      <DependentUpon>ShowApplicationInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DL Services\ReleaseLicense\MainDetainedLicenses.resx">
+      <DependentUpon>MainDetainedLicenses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DL Services\ReleaseLicense\ReleaseLicense.resx">
+      <DependentUpon>ReleaseLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DL Services\RenewLocalDrivingLicense\RenewLocalDrivingLicense.resx">
+      <DependentUpon>RenewLocalDrivingLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DL Services\ReplacementDamagedLostLicenses\ReplacementDamagedLostLicenses.resx">
+      <DependentUpon>ReplacementDamagedLostLicenses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Drivers\MainDrivers.resx">
+      <DependentUpon>MainDrivers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="License\IssueDrivingLicense.resx">
+      <DependentUpon>IssueDrivingLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="License\ShowInternationaLicenseInfo.resx">
+      <DependentUpon>ShowInternationaLicenseInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="License\ShowLicenseHistory.resx">
+      <DependentUpon>ShowLicenseHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="License\ShowLicenseInfo.resx">
+      <DependentUpon>ShowLicenseInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyContols\AddEdit.resx">
       <DependentUpon>AddEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyContors\DisplayFilter.resx">
+    <EmbeddedResource Include="MyContols\ApplicationInfo.resx">
+      <DependentUpon>ApplicationInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyContols\DisplayFilter.resx">
       <DependentUpon>DisplayFilter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainDVLD.resx">
       <DependentUpon>MainDVLD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyContols\FilterLicense.resx">
+      <DependentUpon>FilterLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyContols\InternationalLicenseInfo.resx">
+      <DependentUpon>InternationalLicenseInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyContols\lDrivingLicenseApplicationInfo.resx">
+      <DependentUpon>lDrivingLicenseApplicationInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyContols\LicenseInfo.resx">
+      <DependentUpon>LicenseInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyContols\ScheduledTest.resx">
+      <DependentUpon>ScheduledTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyContols\ScheduleTest .resx">
+      <DependentUpon>ScheduleTest .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyContols\ShowLicensesHistory.resx">
+      <DependentUpon>ShowLicensesHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="People\AddEditPerson.resx">
       <DependentUpon>AddEditPerson.cs</DependentUpon>
@@ -186,8 +411,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="MyContors\ShowDetails.resx">
+    <EmbeddedResource Include="MyContols\ShowDetails.resx">
       <DependentUpon>ShowDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestAppointment\ListTestAppointments.resx">
+      <DependentUpon>ListTestAppointments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestAppointment\ScheduleTest.resx">
+      <DependentUpon>ScheduleTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestAppointment\TakeTest.resx">
+      <DependentUpon>TakeTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TestTypes\MainTestTypes.resx">
       <DependentUpon>MainTestTypes.cs</DependentUpon>
@@ -250,6 +484,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="GlobalFiles\Data.txt" />
+    <None Include="Resources\driving-test 512.png" />
+    <None Include="Resources\Vision 512.png" />
+    <None Include="Resources\Cars 48.png" />
+    <None Include="Resources\Written Test 512.png" />
+    <None Include="Resources\Image1.bmp" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

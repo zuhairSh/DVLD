@@ -194,5 +194,10 @@ namespace DVLD.Users
             changePassword.ShowDialog();
             _LoadData();
         }
+
+        private void DgvUsers_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -41,7 +41,7 @@ namespace DVLD.TestTypes
         private void UpdateToolStripMenuItem_Click(object sender, EventArgs e)
         {
             TestTypes.UpdateTestType updateTestType =
-                new UpdateTestType((int)dgvTestTypes.CurrentRow.Cells[0].Value);
+                new UpdateTestType((clsTestType.enTestType)dgvTestTypes.CurrentRow.Cells[0].Value);
             updateTestType.ShowDialog();
 
             _LoadInfo();

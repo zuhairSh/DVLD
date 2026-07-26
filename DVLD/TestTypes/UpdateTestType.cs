@@ -13,22 +13,20 @@ namespace DVLD.TestTypes
 {
     public partial class UpdateTestType : Form
     {
-        private int _TestTypeID = -1;
+        private clsTestType.enTestType _TestTypeID = clsTestType.enTestType.VisionTest;
         private clsTestType _TestType;
-        public UpdateTestType(int TestTypeID)
+        public UpdateTestType(clsTestType.enTestType TestTypeID)
         {
             InitializeComponent();
 
             this._TestTypeID = TestTypeID;
 
-            if(this._TestTypeID != -1)
-            {
-                _TestType = clsTestType.FindTestType(this._TestTypeID);
-            }
+            
         }
 
         private void UpdateTestType_Load(object sender, EventArgs e)
         {
+            _TestType = clsTestType.FindTestType(_TestTypeID);
             _LoadInfo();
         }
 
@@ -82,7 +80,8 @@ namespace DVLD.TestTypes
                 this.Close();
                 return;
             }
-            labID.Text = _TestType.TestTypeID.ToString();
+
+            labID.Text = ((int)_TestTypeID).ToString();
             textTitle.Text = _TestType.TestTypeTitle;
             textDescription.Text = _TestType.TestTypeDescription;
             textFees.Text = _TestType.TestTypeFees.ToString();

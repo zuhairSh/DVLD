@@ -41,10 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataApplication.cs" />
     <Compile Include="DataApplicationType.cs" />
     <Compile Include="DataConnection.cs" />
     <Compile Include="DataCountry.cs" />
+    <Compile Include="DataDetainedAndReleaseLicenses.cs" />
+    <Compile Include="DataDriver.cs" />
+    <Compile Include="DataInternationalLicenses.cs" />
+    <Compile Include="DataLicense.cs" />
+    <Compile Include="DataLicenseClasses.cs" />
+    <Compile Include="DataLocalDrivingLicenseApplications.cs" />
     <Compile Include="DataPeople.cs" />
+    <Compile Include="DataTest.cs" />
+    <Compile Include="DataTestAppointment.cs" />
     <Compile Include="DataTestTypes.cs" />
     <Compile Include="DataUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

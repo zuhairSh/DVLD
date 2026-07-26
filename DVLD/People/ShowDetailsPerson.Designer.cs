@@ -100,7 +100,7 @@ namespace DVLD.People
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "clsShowDetailsPerson";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShowDetailsPerson";
             this.Load += new System.EventHandler(this.ShowDetailsPerson_Load);
             this.ResumeLayout(false);

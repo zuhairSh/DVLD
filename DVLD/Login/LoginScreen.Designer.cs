@@ -42,14 +42,13 @@ namespace DVLD.Users
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.checkBoxShowPassword = new System.Windows.Forms.CheckBox();
+            this.btClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +57,7 @@ namespace DVLD.Users
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(415, 56);
+            this.label1.Location = new System.Drawing.Point(431, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(234, 27);
             this.label1.TabIndex = 2;
@@ -69,7 +68,7 @@ namespace DVLD.Users
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label3.Location = new System.Drawing.Point(331, 169);
+            this.label3.Location = new System.Drawing.Point(416, 119);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(112, 23);
             this.label3.TabIndex = 4;
@@ -80,7 +79,7 @@ namespace DVLD.Users
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(331, 231);
+            this.label2.Location = new System.Drawing.Point(416, 181);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 23);
             this.label2.TabIndex = 5;
@@ -89,7 +88,7 @@ namespace DVLD.Users
             // textUserName
             // 
             this.textUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textUserName.Location = new System.Drawing.Point(487, 170);
+            this.textUserName.Location = new System.Drawing.Point(572, 120);
             this.textUserName.Name = "textUserName";
             this.textUserName.Size = new System.Drawing.Size(153, 22);
             this.textUserName.TabIndex = 6;
@@ -97,7 +96,7 @@ namespace DVLD.Users
             // textPassword
             // 
             this.textPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textPassword.Location = new System.Drawing.Point(487, 231);
+            this.textPassword.Location = new System.Drawing.Point(572, 181);
             this.textPassword.Name = "textPassword";
             this.textPassword.Size = new System.Drawing.Size(153, 22);
             this.textPassword.TabIndex = 7;
@@ -107,7 +106,7 @@ namespace DVLD.Users
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(398, 278);
+            this.checkBox1.Location = new System.Drawing.Point(426, 230);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(128, 20);
             this.checkBox1.TabIndex = 10;
@@ -139,7 +138,7 @@ namespace DVLD.Users
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(436, 225);
+            this.pictureBox4.Location = new System.Drawing.Point(521, 175);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(33, 29);
             this.pictureBox4.TabIndex = 9;
@@ -148,7 +147,7 @@ namespace DVLD.Users
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(436, 169);
+            this.pictureBox3.Location = new System.Drawing.Point(521, 119);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(33, 29);
             this.pictureBox3.TabIndex = 8;
@@ -158,23 +157,12 @@ namespace DVLD.Users
             // 
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(-31, -21);
+            this.pictureBox2.Location = new System.Drawing.Point(-26, -91);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(365, 507);
+            this.pictureBox2.Size = new System.Drawing.Size(418, 603);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(706, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(35, 36);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
             // errorProvider1
             // 
@@ -184,7 +172,7 @@ namespace DVLD.Users
             // 
             this.checkBoxShowPassword.AutoSize = true;
             this.checkBoxShowPassword.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxShowPassword.Location = new System.Drawing.Point(646, 231);
+            this.checkBoxShowPassword.Location = new System.Drawing.Point(639, 209);
             this.checkBoxShowPassword.Name = "checkBoxShowPassword";
             this.checkBoxShowPassword.Size = new System.Drawing.Size(112, 19);
             this.checkBoxShowPassword.TabIndex = 13;
@@ -192,13 +180,26 @@ namespace DVLD.Users
             this.checkBoxShowPassword.UseVisualStyleBackColor = true;
             this.checkBoxShowPassword.CheckStateChanged += new System.EventHandler(this.CheckBoxShowPassword_CheckStateChanged);
             // 
+            // btClose
+            // 
+            this.btClose.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btClose.Image = ((System.Drawing.Image)(resources.GetObject("btClose.Image")));
+            this.btClose.Location = new System.Drawing.Point(697, 12);
+            this.btClose.Name = "btClose";
+            this.btClose.Size = new System.Drawing.Size(51, 37);
+            this.btClose.TabIndex = 14;
+            this.btClose.Text = " ";
+            this.btClose.UseVisualStyleBackColor = false;
+            this.btClose.Click += new System.EventHandler(this.BtClose_Click);
+            // 
             // LoginScreen
             // 
             this.AcceptButton = this.btLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(760, 448);
+            this.ClientSize = new System.Drawing.Size(760, 432);
+            this.Controls.Add(this.btClose);
             this.Controls.Add(this.checkBoxShowPassword);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.btLogin);
@@ -211,17 +212,15 @@ namespace DVLD.Users
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LoginScreen";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginScreen";
             this.Load += new System.EventHandler(this.LoginScreen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -229,8 +228,6 @@ namespace DVLD.Users
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
@@ -244,5 +241,6 @@ namespace DVLD.Users
         public System.Windows.Forms.TextBox textPassword;
         public System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBoxShowPassword;
+        private System.Windows.Forms.Button btClose;
     }
 }

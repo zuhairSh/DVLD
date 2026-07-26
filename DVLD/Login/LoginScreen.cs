@@ -20,14 +20,6 @@ namespace DVLD.Users
         }
 
 
-        private void PictureBox1_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-
-        }
-
-       
-
         private void LoginScreen_Load(object sender, EventArgs e)
         {
             string UserName = "", Password = "";
@@ -125,6 +117,11 @@ namespace DVLD.Users
             else
                 textPassword.UseSystemPasswordChar = true;
 
+        }
+
+        private void BtClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

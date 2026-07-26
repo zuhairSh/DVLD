@@ -90,7 +90,7 @@ namespace DVLD.ApplicationType
                 if (_ValidateForm())
                 {
                     _ApplicationType.ApplicationTypeTitle = textTitle.Text;
-                    _ApplicationType.ApplicationFees = decimal.Parse(textFees.Text);
+                    _ApplicationType.ApplicationFees = float.Parse(textFees.Text);
                     
                     if (_ApplicationType.Save())
                     {

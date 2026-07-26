@@ -67,6 +67,7 @@ namespace DVLD.People
             // 
             // addEdit1
             // 
+            this.addEdit1._PersonInfo = null;
             this.addEdit1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.addEdit1.Location = new System.Drawing.Point(-5, 81);
             this.addEdit1.Name = "addEdit1";
@@ -83,6 +84,7 @@ namespace DVLD.People
             this.Controls.Add(this.labelMode);
             this.Controls.Add(this.addEdit1);
             this.Name = "AddEditPerson";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddEditPerson";
             this.Load += new System.EventHandler(this.AddEditPerson_Load);
             this.ResumeLayout(false);

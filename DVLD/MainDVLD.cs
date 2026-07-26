@@ -76,5 +76,96 @@ namespace DVLD
             TestTypes.MainTestTypes mainTestTypes = new TestTypes.MainTestTypes();
             mainTestTypes.ShowDialog();
         }
+
+        private void LocalLicenceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DL_Services.NewDL.AddEditLocalLicense addEditLocalLicense =
+                new DL_Services.NewDL.AddEditLocalLicense(-1);
+
+            addEditLocalLicense.ShowDialog();
+        }
+
+        private void LocalDrivingLicenseApplicationsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DL_Services.LocalDrivingLicenseApplication.ManageLocalDrivingLicenseApplication manageLocalDrivingLicense =
+                new DL_Services.LocalDrivingLicenseApplication.ManageLocalDrivingLicenseApplication();
+            manageLocalDrivingLicense.ShowDialog();
+        }
+
+        private void DriversToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Drivers.MainDrivers mainDrivers = new Drivers.MainDrivers();
+            mainDrivers.ShowDialog();
+        }
+
+        private void InternationalLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DL_Services.International_Driving_License.NewInternationalDrivingLicense newInternational
+                = new DL_Services.International_Driving_License.NewInternationalDrivingLicense();
+
+            newInternational.ShowDialog();
+
+        }
+
+        private void InternationalLicenseApplicationsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DL_Services.International_Driving_License.ManageInternationalDrivingLicense 
+                manageInternationalDriving =
+               new DL_Services.International_Driving_License.ManageInternationalDrivingLicense();
+
+            manageInternationalDriving.ShowDialog();
+        }
+
+        private void MainDVLD_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RenewLocalDrivingLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DL_Services.RenewLocalDrivingLicense.RenewLocalDrivingLicense renewLocalDriving = 
+                new DL_Services.RenewLocalDrivingLicense.RenewLocalDrivingLicense();
+
+            renewLocalDriving.ShowDialog();
+        }
+
+        private void ReplacementDamagedOrLostLicensesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DL_Services.ReplacementDamagedLostLicenses.ReplacementDamagedLostLicenses ReplacementLicense
+                = new DL_Services.ReplacementDamagedLostLicenses.ReplacementDamagedLostLicenses();
+
+            ReplacementLicense.ShowDialog();
+        }
+
+        private void ToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            DL_Services.DetainLicense.NewDetainLicense detainLicense = 
+                new DL_Services.DetainLicense.NewDetainLicense();
+            detainLicense.ShowDialog();
+        }
+
+        private void ManageDetainLicensesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DL_Services.ReleaseLicense.ReleaseLicense releaseLicense = 
+                new DL_Services.ReleaseLicense.ReleaseLicense();
+
+            releaseLicense.ShowDialog();
+        }
+
+        private void ReleaseDetainedDrivingLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DL_Services.ReleaseLicense.ReleaseLicense releaseLicense =
+               new DL_Services.ReleaseLicense.ReleaseLicense();
+
+            releaseLicense.ShowDialog();
+        }
+
+        private void ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            DL_Services.ReleaseLicense.MainDetainedLicenses mainDetainedLicenses = 
+                new DL_Services.ReleaseLicense.MainDetainedLicenses();
+
+            mainDetainedLicenses.ShowDialog();
+        }
     }
 }

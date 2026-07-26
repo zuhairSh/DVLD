@@ -45,7 +45,7 @@ namespace DataDVLDLayer
         }
 
         public static bool UpdateApplicationType(int ApplicationTypeID,string ApplicationTypeTitle
-            , decimal ApplicationFees)
+            , float ApplicationFees)
         {
             int result = 0;
 
@@ -119,7 +119,7 @@ namespace DataDVLDLayer
         }
 
         public static bool GetApplicationTypeInfoByID(int ApplicationTypeID,ref string ApplicationTypeTitle
-            ,ref decimal ApplicationTypeFees)
+            ,ref float ApplicationTypeFees)
         {
             bool isFound = false;
 
@@ -142,9 +142,10 @@ namespace DataDVLDLayer
                 if(reader.Read())
                 {
                     ApplicationTypeTitle = (string)reader["ApplicationTypeTitle"];
-                    ApplicationTypeFees = (decimal)reader["ApplicationFees"];
+                    ApplicationTypeFees = Convert.ToSingle(reader["ApplicationFees"]);
                     isFound = true;
                 }
+
 
                 reader.Close();
 
