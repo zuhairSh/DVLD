@@ -71,9 +71,8 @@ See `DVLD_Diagram.pdf` for the complete ER diagram
 ## 🎬 Demo
 
 Watch the complete project walkthrough:
-**[DVLD System Full Demo - Video](https://www.youtube.com/watch?v=DVLD-demo-placeholder)**
 --
-**[DVLD System - Images](https://www.youtube.com/watch?v=DVLD-demo-placeholder)**
+**[DVLD System - Video 📷 ](https://drive.google.com/file/d/1sa8HQLhFYcd-d0MBQF0P8bBaiH54T26v/view?usp=drivesdk)**
 
 ## 🎓 Learning Highlights
 
