@@ -96,7 +96,7 @@ This project demonstrates mastery of:
 
 ## 🔒 Security Features
 
-- Password hashing for user authentication
+- Preventing the same username from being used by more than one person
 - Role-based access control (RBAC)
 - Audit logging for all operations
 - Data validation at multiple layers
