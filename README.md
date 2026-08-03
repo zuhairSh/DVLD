@@ -93,6 +93,7 @@ This project demonstrates mastery of:
 
 - Preventing the same username from being used by more than one person
 - Role-based access control (RBAC)
+- - Password hashing for secure user authentication in Business Layer
 - Audit logging for all operations
 - Data validation at multiple layers
 - Prevention of unauthorized license operations
