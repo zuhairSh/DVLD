@@ -483,7 +483,6 @@
     <None Include="Resources\Female 512.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="GlobalFiles\Data.txt" />
     <None Include="Resources\driving-test 512.png" />
     <None Include="Resources\Vision 512.png" />
     <None Include="Resources\Cars 48.png" />
