@@ -11,6 +11,7 @@ using BusinessDVLDLayer;
 using DVLD.GlobalClass;
 using System.Diagnostics;
 
+
 namespace DVLD.Users
 {
     public partial class LoginScreen : Form
@@ -65,9 +66,11 @@ namespace DVLD.Users
         {
             if (_VerifiedFillInfo())
             {
+                
 
+                clsUser user = 
+                    clsUser.GetUserInfoByUserNameAndPassword(textUserName.Text, textPassword.Text);
 
-                clsUser user = clsUser.GetUserInfoByUserNameAndPassword(textUserName.Text, textPassword.Text);
 
                 if (user != null)
                 {

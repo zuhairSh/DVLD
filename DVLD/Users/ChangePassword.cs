@@ -173,7 +173,7 @@ namespace DVLD.Users
             }
             else { errorProvider1.SetError(textConfirm, ""); }
 
-            if(textCurrontPassword.Text != _User.Password)
+            if(ClassHash.ComputeHash(textCurrontPassword.Text) != _User.Password)
             {
                 errorProvider1.SetError(textCurrontPassword, "The password is incorrect");
                 isValid = false;
@@ -197,7 +197,7 @@ namespace DVLD.Users
 
             if (_Verified())
             {
-                _User.Password = textConfirm.Text;
+                _User.Password = ClassHash.ComputeHash(textConfirm.Text);
                
                 if (_User.Save())
                 {

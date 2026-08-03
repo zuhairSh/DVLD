@@ -74,10 +74,9 @@ namespace DVLD.Users
                 displayFilter1.Person = Person;
 
                 displayFilter1._DownData(Person);    
-                labUserID.Text = UserID.ToString();
                 textUserName.Text = User.UserName;
-                textPassword.Text = User.Password;
-                textPassword2.Text = User.Password;
+                textPassword.Text = "";
+                textPassword2.Text = "";
 
                 checkBox1.Checked = User.isActive;
             }
@@ -285,7 +284,6 @@ namespace DVLD.Users
                         _Mode = enModes.eUpdate;
                         this.UserID = User.UserID;
 
-                        _LoadData();
                     }
                     else
                     {

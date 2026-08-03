@@ -78,17 +78,29 @@ namespace BusinessDVLDLayer
             return clsDataUser.GetAllUsers();
         }
 
-        private bool _AddUse()
+        private bool _AddUser()
         {
+            string hashedPassword =  ClassHash.ComputeHash(this.Password);
+
             this.UserID = clsDataUser.AddUser(this.PersonID, this.UserName,
-                this.Password, this.isActive);
+                hashedPassword, this.isActive);
             return this.UserID != -1;
         }
 
         private bool _UpdateUser()
         {
-            return clsDataUser.UpdateUser(this.UserID, this.PersonID, this.UserName,
-                this.Password , this.isActive);
+            
+            string hashedPassword = this.Password;
+
+            clsUser currentUserInDB = FindUser(this.UserID);
+
+            if (currentUserInDB != null && currentUserInDB.Password != this.Password)
+            {
+                hashedPassword = ClassHash.ComputeHash(this.Password);
+            }
+
+            return clsDataUser.UpdateUser(this.UserID, this.PersonID,
+                this.UserName, hashedPassword, this.isActive);
         }
 
         public static bool DeleteUserByID(int UserID)
@@ -116,7 +128,7 @@ namespace BusinessDVLDLayer
             switch (_Mode)
             {
                 case enMode.Add:
-                    if (_AddUse())
+                    if (_AddUser())
                     {
                         _Mode = enMode.Update;
                         return true;
@@ -133,7 +145,9 @@ namespace BusinessDVLDLayer
 
         public static bool isAllowedLogin(string UserName, string Password)
         {
-            return clsDataUser.isAllowedForLogin(UserName, Password);
+            string hashedPassword = ClassHash.ComputeHash(Password);
+
+            return clsDataUser.isAllowedForLogin(UserName, hashedPassword);
         }
 
         public static bool isUserNameUserAvailable(string UserName)
@@ -148,11 +162,13 @@ namespace BusinessDVLDLayer
 
             bool IsActive = false;
 
+            string hashedPassword = ClassHash.ComputeHash(Password);
+
             bool IsFound = clsDataUser.GetUserInfoByUserNameAndPassword
-                                (UserName, Password, ref UserID, ref PersonID, ref IsActive);
+                                (UserName, hashedPassword, ref UserID, ref PersonID, ref IsActive);
 
             if (IsFound)
-                return new clsUser(UserID, PersonID, UserName, Password, IsActive);
+                return new clsUser(UserID, PersonID, UserName, hashedPassword, IsActive);
             else
                 return null;
         }
