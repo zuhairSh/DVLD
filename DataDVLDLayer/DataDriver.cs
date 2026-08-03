@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 
 namespace DataDVLDLayer
 {
@@ -30,15 +31,12 @@ namespace DataDVLDLayer
 
                 if (reader.Read())
                 {
-
                     // The record was found
                     isFound = true;
 
                     PersonID = (int)reader["PersonID"];
                     CreatedByUserID = (int)reader["CreatedByUserID"];
                     CreatedDate = (DateTime)reader["CreatedDate"];
-
-
                 }
                 else
                 {
@@ -47,12 +45,18 @@ namespace DataDVLDLayer
                 }
 
                 reader.Close();
-
-
             }
             catch (Exception ex)
             {
-                //Console.WriteLine("Error: " + ex.Message);
+                string sourceName = "DVLD_App";
+
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                EventLog.WriteEntry(sourceName, ex.Message, EventLogEntryType.Error);
+
                 isFound = false;
             }
             finally
@@ -83,14 +87,12 @@ namespace DataDVLDLayer
 
                 if (reader.Read())
                 {
-
                     // The record was found
                     isFound = true;
 
                     DriverID = (int)reader["DriverID"];
                     CreatedByUserID = (int)reader["CreatedByUserID"];
                     CreatedDate = (DateTime)reader["CreatedDate"];
-
                 }
                 else
                 {
@@ -99,12 +101,18 @@ namespace DataDVLDLayer
                 }
 
                 reader.Close();
-
-
             }
             catch (Exception ex)
             {
-                //Console.WriteLine("Error: " + ex.Message);
+                string sourceName = "DVLD_App";
+
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                EventLog.WriteEntry(sourceName, ex.Message, EventLogEntryType.Error);
+
                 isFound = false;
             }
             finally
@@ -117,7 +125,6 @@ namespace DataDVLDLayer
 
         public static DataTable GetAllDrivers()
         {
-
             DataTable dt = new DataTable();
             SqlConnection connection = new SqlConnection(clsConnection.ConnectionString);
 
@@ -132,19 +139,22 @@ namespace DataDVLDLayer
                 SqlDataReader reader = command.ExecuteReader();
 
                 if (reader.HasRows)
-
                 {
                     dt.Load(reader);
                 }
 
                 reader.Close();
-
-
             }
-
             catch (Exception ex)
             {
-                // Console.WriteLine("Error: " + ex.Message);
+                string sourceName = "DVLD_App";
+
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                EventLog.WriteEntry(sourceName, ex.Message, EventLogEntryType.Error);
             }
             finally
             {
@@ -152,7 +162,6 @@ namespace DataDVLDLayer
             }
 
             return dt;
-
         }
 
         public static int AddNewDriver(int PersonID, int CreatedByUserID)
@@ -166,11 +175,11 @@ namespace DataDVLDLayer
                           
                             SELECT SCOPE_IDENTITY();";
 
-
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@PersonID", PersonID);
             command.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
             command.Parameters.AddWithValue("@CreatedDate", DateTime.Now);
+
             try
             {
                 connection.Open();
@@ -182,24 +191,23 @@ namespace DataDVLDLayer
                     DriverID = insertedID;
                 }
             }
-
             catch (Exception ex)
             {
-                //Console.WriteLine("Error: " + ex.Message);
+                string sourceName = "DVLD_App";
 
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                EventLog.WriteEntry(sourceName, ex.Message, EventLogEntryType.Error);
             }
-
             finally
             {
                 connection.Close();
             }
 
-
             return DriverID;
-
         }
-
-      
-
     }
 }

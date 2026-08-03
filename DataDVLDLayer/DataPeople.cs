@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using System.Diagnostics;
 
 namespace DataDVLDLayer
 {
@@ -25,7 +26,7 @@ namespace DataDVLDLayer
              ,People.Address, People.Email,People.Phone,Countries.CountryName,People.ImagePath From People join Countries
              on People.NationalityCountryID = Countries.CountryID 
              order by People.FirstName;";
-             
+
             SqlCommand command = new SqlCommand(quere, connection);
 
             try
@@ -43,6 +44,14 @@ namespace DataDVLDLayer
             }
             catch (Exception ex)
             {
+                string sourceName = "DVLD_App";
+
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                EventLog.WriteEntry(sourceName, ex.Message, EventLogEntryType.Error);
             }
             finally
             {
@@ -91,7 +100,7 @@ namespace DataDVLDLayer
 
                     Phone = (string)reader["Phone"];
                     Address = (string)reader["Address"];
-                    Gendor = Convert.ToByte(reader["Gendor"]); 
+                    Gendor = Convert.ToByte(reader["Gendor"]);
                     DateOfBirth = (DateTime)reader["DateOfBirth"];
                     CountryID = (int)reader["NationalityCountryID"];
 
@@ -107,7 +116,15 @@ namespace DataDVLDLayer
             }
             catch (Exception ex)
             {
-                
+                string sourceName = "DVLD_App";
+
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                EventLog.WriteEntry(sourceName, ex.Message, EventLogEntryType.Error);
+
                 isFound = false;
             }
             finally
@@ -196,6 +213,15 @@ namespace DataDVLDLayer
             }
             catch (Exception ex)
             {
+                string sourceName = "DVLD_App";
+
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                EventLog.WriteEntry(sourceName, ex.Message, EventLogEntryType.Error);
+
                 isFound = false;
             }
             finally
@@ -206,9 +232,9 @@ namespace DataDVLDLayer
             return isFound;
         }
 
-        public static int AddPerson( string NationalNo,  string FirstName,
-            string SecondName,  string ThirdName,  string LastName,  string Email,  string Phone,  string Address,
-            DateTime DateOfBirth,  int CountryID,  byte Gendor,  string ImagePath)
+        public static int AddPerson(string NationalNo, string FirstName,
+            string SecondName, string ThirdName, string LastName, string Email, string Phone, string Address,
+            DateTime DateOfBirth, int CountryID, byte Gendor, string ImagePath)
         {
 
             int PersonID = -1;
@@ -261,16 +287,23 @@ namespace DataDVLDLayer
             try
             {
                 connection.Open();
-                Object Result = command.ExecuteScalar(); 
+                Object Result = command.ExecuteScalar();
 
                 if (Result != null && int.TryParse(Result.ToString(), out int insertedID))
                 {
                     PersonID = insertedID;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
+                string sourceName = "DVLD_App";
 
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                EventLog.WriteEntry(sourceName, ex.Message, EventLogEntryType.Error);
             }
             finally
             {
@@ -344,9 +377,16 @@ namespace DataDVLDLayer
                 connection.Open();
                 result = command.ExecuteNonQuery();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
+                string sourceName = "DVLD_App";
 
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                EventLog.WriteEntry(sourceName, ex.Message, EventLogEntryType.Error);
             }
             finally
             {
@@ -372,9 +412,16 @@ namespace DataDVLDLayer
                 connection.Open();
                 result = command.ExecuteNonQuery();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
+                string sourceName = "DVLD_App";
 
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                EventLog.WriteEntry(sourceName, ex.Message, EventLogEntryType.Error);
             }
             finally
             {
@@ -406,6 +453,15 @@ namespace DataDVLDLayer
             }
             catch (Exception ex)
             {
+                string sourceName = "DVLD_App";
+
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                EventLog.WriteEntry(sourceName, ex.Message, EventLogEntryType.Error);
+
                 isFound = false;
             }
             finally
@@ -439,6 +495,15 @@ namespace DataDVLDLayer
             }
             catch (Exception ex)
             {
+                string sourceName = "DVLD_App";
+
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                EventLog.WriteEntry(sourceName, ex.Message, EventLogEntryType.Error);
+
                 isFound = false;
             }
             finally

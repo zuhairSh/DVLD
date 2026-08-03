@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 
 namespace DataDVLDLayer
 {
@@ -58,7 +59,15 @@ namespace DataDVLDLayer
             }
             catch (Exception ex)
             {
-                //Console.WriteLine("Error: " + ex.Message);
+                string sourceName = "DVLD_App";
+
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                EventLog.WriteEntry(sourceName, ex.Message, EventLogEntryType.Error);
+
                 isFound = false;
             }
             finally
@@ -81,8 +90,8 @@ namespace DataDVLDLayer
 
             string query = @"SELECT  top 1 Tests.TestID, 
                 Tests.TestAppointmentID, Tests.TestResult, 
-			    Tests.Notes, Tests.CreatedByUserID, Applications.ApplicantPersonID
-                FROM            LocalDrivingLicenseApplications INNER JOIN
+                Tests.Notes, Tests.CreatedByUserID, Applications.ApplicantPersonID
+                FROM         LocalDrivingLicenseApplications INNER JOIN
                                          Tests INNER JOIN
                                          TestAppointments ON Tests.TestAppointmentID = TestAppointments.TestAppointmentID ON LocalDrivingLicenseApplications.LocalDrivingLicenseApplicationID = TestAppointments.LocalDrivingLicenseApplicationID INNER JOIN
                                          Applications ON LocalDrivingLicenseApplications.ApplicationID = Applications.ApplicationID
@@ -131,7 +140,15 @@ namespace DataDVLDLayer
             }
             catch (Exception ex)
             {
-                //Console.WriteLine("Error: " + ex.Message);
+                string sourceName = "DVLD_App";
+
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                EventLog.WriteEntry(sourceName, ex.Message, EventLogEntryType.Error);
+
                 isFound = false;
             }
             finally
@@ -172,7 +189,14 @@ namespace DataDVLDLayer
 
             catch (Exception ex)
             {
-                // Console.WriteLine("Error: " + ex.Message);
+                string sourceName = "DVLD_App";
+
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                EventLog.WriteEntry(sourceName, ex.Message, EventLogEntryType.Error);
             }
             finally
             {
@@ -228,7 +252,14 @@ namespace DataDVLDLayer
 
             catch (Exception ex)
             {
-                //Console.WriteLine("Error: " + ex.Message);
+                string sourceName = "DVLD_App";
+
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                EventLog.WriteEntry(sourceName, ex.Message, EventLogEntryType.Error);
 
             }
 
@@ -272,7 +303,15 @@ namespace DataDVLDLayer
             }
             catch (Exception ex)
             {
-                //Console.WriteLine("Error: " + ex.Message);
+                string sourceName = "DVLD_App";
+
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                EventLog.WriteEntry(sourceName, ex.Message, EventLogEntryType.Error);
+
                 return false;
             }
 
@@ -293,7 +332,7 @@ namespace DataDVLDLayer
             string query = @"SELECT PassedTestCount = count(TestTypeID)
                          FROM Tests INNER JOIN
                          TestAppointments ON Tests.TestAppointmentID = TestAppointments.TestAppointmentID
-						 where LocalDrivingLicenseApplicationID =@LocalDrivingLicenseApplicationID and TestResult=1";
+                         where LocalDrivingLicenseApplicationID =@LocalDrivingLicenseApplicationID and TestResult=1";
 
             SqlCommand command = new SqlCommand(query, connection);
 
@@ -314,7 +353,14 @@ namespace DataDVLDLayer
 
             catch (Exception ex)
             {
-                //Console.WriteLine("Error: " + ex.Message);
+                string sourceName = "DVLD_App";
+
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                EventLog.WriteEntry(sourceName, ex.Message, EventLogEntryType.Error);
 
             }
 
@@ -324,8 +370,6 @@ namespace DataDVLDLayer
             }
 
             return PassedTestCount;
-
-
 
         }
     }

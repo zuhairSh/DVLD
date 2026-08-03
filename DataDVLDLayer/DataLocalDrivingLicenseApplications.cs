@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using System.Diagnostics;
 
 namespace DataDVLDLayer
 {
@@ -54,7 +55,18 @@ namespace DataDVLDLayer
             }
             catch (Exception ex)
             {
-                //Console.WriteLine("Error: " + ex.Message);
+                string sourceName = "DVLD_App";
+
+
+                // Create the event source if it does not exist
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                // Log an information event
+                EventLog.WriteEntry(sourceName, ex.Message
+                    , EventLogEntryType.Error);
                 isFound = false;
             }
             finally
@@ -106,7 +118,18 @@ namespace DataDVLDLayer
             }
             catch (Exception ex)
             {
-                //Console.WriteLine("Error: " + ex.Message);
+                string sourceName = "DVLD_App";
+
+
+                // Create the event source if it does not exist
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                // Log an information event
+                EventLog.WriteEntry(sourceName, ex.Message
+                    , EventLogEntryType.Error);
                 isFound = false;
             }
             finally
@@ -151,7 +174,18 @@ namespace DataDVLDLayer
 
             catch (Exception ex)
             {
-                // Console.WriteLine("Error: " + ex.Message);
+                string sourceName = "DVLD_App";
+
+
+                // Create the event source if it does not exist
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                // Log an information event
+                EventLog.WriteEntry(sourceName, ex.Message
+                    , EventLogEntryType.Error);
             }
             finally
             {
@@ -195,7 +229,18 @@ namespace DataDVLDLayer
 
             catch (Exception ex)
             {
-                //Console.WriteLine("Error: " + ex.Message);
+                string sourceName = "DVLD_App";
+
+
+                // Create the event source if it does not exist
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                // Log an information event
+                EventLog.WriteEntry(sourceName, ex.Message
+                    , EventLogEntryType.Error);
 
             }
 
@@ -236,7 +281,18 @@ namespace DataDVLDLayer
             }
             catch (Exception ex)
             {
-                //Console.WriteLine("Error: " + ex.Message);
+                string sourceName = "DVLD_App";
+
+
+                // Create the event source if it does not exist
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                // Log an information event
+                EventLog.WriteEntry(sourceName, ex.Message
+                    , EventLogEntryType.Error);
                 return false;
             }
 
@@ -272,7 +328,18 @@ namespace DataDVLDLayer
             }
             catch (Exception ex)
             {
-                // Console.WriteLine("Error: " + ex.Message);
+                string sourceName = "DVLD_App";
+
+
+                // Create the event source if it does not exist
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                // Log an information event
+                EventLog.WriteEntry(sourceName, ex.Message
+                    , EventLogEntryType.Error);
             }
             finally
             {
@@ -322,7 +389,18 @@ namespace DataDVLDLayer
 
             catch (Exception ex)
             {
-                //Console.WriteLine("Error: " + ex.Message);
+                string sourceName = "DVLD_App";
+
+
+                // Create the event source if it does not exist
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                // Log an information event
+                EventLog.WriteEntry(sourceName, ex.Message
+                    , EventLogEntryType.Error);
 
             }
 
@@ -374,7 +452,18 @@ namespace DataDVLDLayer
 
             catch (Exception ex)
             {
-                //Console.WriteLine("Error: " + ex.Message);
+                string sourceName = "DVLD_App";
+
+
+                // Create the event source if it does not exist
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                // Log an information event
+                EventLog.WriteEntry(sourceName, ex.Message
+                    , EventLogEntryType.Error);
 
             }
 
@@ -425,7 +514,18 @@ namespace DataDVLDLayer
 
             catch (Exception ex)
             {
-                //Console.WriteLine("Error: " + ex.Message);
+                string sourceName = "DVLD_App";
+
+
+                // Create the event source if it does not exist
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                // Log an information event
+                EventLog.WriteEntry(sourceName, ex.Message
+                    , EventLogEntryType.Error);
 
             }
 
@@ -459,8 +559,20 @@ namespace DataDVLDLayer
                 if (result != null)
                     isFound = true;
             }
-            catch
+            catch (Exception ex)
             {
+                string sourceName = "DVLD_App";
+
+
+                // Create the event source if it does not exist
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                // Log an information event
+                EventLog.WriteEntry(sourceName, ex.Message
+                    , EventLogEntryType.Error);
                 isFound = false;
             }
             finally

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 
 namespace DataDVLDLayer
 {
@@ -17,9 +18,6 @@ namespace DataDVLDLayer
 
             string query = @"select * from InternationalLicenses";
 
-
-
-
             SqlCommand command = new SqlCommand(query, connection);
 
             try
@@ -29,19 +27,22 @@ namespace DataDVLDLayer
                 SqlDataReader reader = command.ExecuteReader();
 
                 if (reader.HasRows)
-
                 {
                     dt.Load(reader);
                 }
 
                 reader.Close();
-
-
             }
-
             catch (Exception ex)
             {
-                // Console.WriteLine("Error: " + ex.Message);
+                string sourceName = "DVLD_App";
+
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                EventLog.WriteEntry(sourceName, ex.Message, EventLogEntryType.Error);
             }
             finally
             {
@@ -58,9 +59,6 @@ namespace DataDVLDLayer
 
             string query = @"select * from InternationalLicenses where DriverID = @DriverID";
 
-
-
-
             SqlCommand command = new SqlCommand(query, connection);
 
             command.Parameters.AddWithValue("@DriverID", DriverID);
@@ -72,19 +70,22 @@ namespace DataDVLDLayer
                 SqlDataReader reader = command.ExecuteReader();
 
                 if (reader.HasRows)
-
                 {
                     dt.Load(reader);
                 }
 
                 reader.Close();
-
-
             }
-
             catch (Exception ex)
             {
-                // Console.WriteLine("Error: " + ex.Message);
+                string sourceName = "DVLD_App";
+
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                EventLog.WriteEntry(sourceName, ex.Message, EventLogEntryType.Error);
             }
             finally
             {
@@ -102,7 +103,6 @@ namespace DataDVLDLayer
            DateTime ExpirationDate,
            bool IsActive,
            int CreatedByUserID)
-
         {
             int InternationalLicenseID = -1;
 
@@ -150,6 +150,15 @@ namespace DataDVLDLayer
             }
             catch (Exception ex)
             {
+                string sourceName = "DVLD_App";
+
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                EventLog.WriteEntry(sourceName, ex.Message, EventLogEntryType.Error);
+
                 InternationalLicenseID = -1;
             }
             finally
@@ -182,7 +191,6 @@ namespace DataDVLDLayer
 
                 if (reader.Read())
                 {
-
                     // The record was found
                     isFound = true;
                     ApplicationID = (int)reader["ApplicationID"];
@@ -191,11 +199,8 @@ namespace DataDVLDLayer
                     IssueDate = (DateTime)reader["IssueDate"];
                     ExpirationDate = (DateTime)reader["ExpirationDate"];
 
-
                     IsActive = (bool)reader["IsActive"];
-                    CreatedByUserID = (int)reader["DriverID"];
-
-
+                    CreatedByUserID = (int)reader["CreatedByUserID"];
                 }
                 else
                 {
@@ -204,12 +209,18 @@ namespace DataDVLDLayer
                 }
 
                 reader.Close();
-
-
             }
             catch (Exception ex)
             {
-                //Console.WriteLine("Error: " + ex.Message);
+                string sourceName = "DVLD_App";
+
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                EventLog.WriteEntry(sourceName, ex.Message, EventLogEntryType.Error);
+
                 isFound = false;
             }
             finally
@@ -222,15 +233,14 @@ namespace DataDVLDLayer
 
         public static DataTable GetDriverInternationalLicenses(int DriverID)
         {
-
             DataTable dt = new DataTable();
             SqlConnection connection = new SqlConnection(clsConnection.ConnectionString);
 
             string query = @"
             SELECT    InternationalLicenseID, ApplicationID,
-		                IssuedUsingLocalLicenseID , IssueDate, 
+                        IssuedUsingLocalLicenseID , IssueDate, 
                         ExpirationDate, IsActive
-		    from InternationalLicenses where DriverID=@DriverID
+            from InternationalLicenses where DriverID=@DriverID
                 order by ExpirationDate desc";
 
             SqlCommand command = new SqlCommand(query, connection);
@@ -243,19 +253,22 @@ namespace DataDVLDLayer
                 SqlDataReader reader = command.ExecuteReader();
 
                 if (reader.HasRows)
-
                 {
                     dt.Load(reader);
                 }
 
                 reader.Close();
-
-
             }
-
             catch (Exception ex)
             {
-                // Console.WriteLine("Error: " + ex.Message);
+                string sourceName = "DVLD_App";
+
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                EventLog.WriteEntry(sourceName, ex.Message, EventLogEntryType.Error);
             }
             finally
             {
@@ -263,7 +276,6 @@ namespace DataDVLDLayer
             }
 
             return dt;
-
         }
 
         public static int GetActiveInternationalLicenseIDByDriverID(int DriverID)
@@ -293,21 +305,23 @@ namespace DataDVLDLayer
                     InternationalLicenseID = insertedID;
                 }
             }
-
             catch (Exception ex)
             {
-                //Console.WriteLine("Error: " + ex.Message);
+                string sourceName = "DVLD_App";
 
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                EventLog.WriteEntry(sourceName, ex.Message, EventLogEntryType.Error);
             }
-
             finally
             {
                 connection.Close();
             }
 
-
             return InternationalLicenseID;
         }
-
     }
 }

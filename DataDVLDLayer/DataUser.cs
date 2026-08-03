@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using System.Diagnostics;
 
 namespace DataDVLDLayer
 {
@@ -39,6 +40,14 @@ namespace DataDVLDLayer
             }
             catch (Exception ex)
             {
+                string sourceName = "DVLD_App";
+
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                EventLog.WriteEntry(sourceName, ex.Message, EventLogEntryType.Error);
             }
             finally
             {
@@ -82,6 +91,14 @@ namespace DataDVLDLayer
             }
             catch (Exception ex)
             {
+                string sourceName = "DVLD_App";
+
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                EventLog.WriteEntry(sourceName, ex.Message, EventLogEntryType.Error);
 
                 isFound = false;
             }
@@ -94,7 +111,7 @@ namespace DataDVLDLayer
 
 
 
-        public static bool GetUserInfoByNationalNo(string NationalNo, ref int UserID, 
+        public static bool GetUserInfoByNationalNo(string NationalNo, ref int UserID,
             ref int PersonID, ref string UserName, ref string Password, ref bool IsActive)
         {
             bool isFound = false;
@@ -124,7 +141,7 @@ namespace DataDVLDLayer
                     UserName = (string)reader["UserName"];
                     PersonID = (int)reader["PersonID"];
                     Password = (string)reader["Password"];
-                    IsActive = (bool)reader["IsActive"];                
+                    IsActive = (bool)reader["IsActive"];
                 }
                 else
                 {
@@ -137,6 +154,15 @@ namespace DataDVLDLayer
             }
             catch (Exception ex)
             {
+                string sourceName = "DVLD_App";
+
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                EventLog.WriteEntry(sourceName, ex.Message, EventLogEntryType.Error);
+
                 isFound = false;
             }
             finally
@@ -147,8 +173,8 @@ namespace DataDVLDLayer
             return isFound;
         }
 
-        public static int AddUser( int PersonID,
-            string UserName,  string Password,  bool IsActive)
+        public static int AddUser(int PersonID,
+            string UserName, string Password, bool IsActive)
         {
 
             int UserID = -1;
@@ -185,7 +211,14 @@ namespace DataDVLDLayer
             }
             catch (Exception ex)
             {
+                string sourceName = "DVLD_App";
 
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                EventLog.WriteEntry(sourceName, ex.Message, EventLogEntryType.Error);
             }
             finally
             {
@@ -215,7 +248,6 @@ namespace DataDVLDLayer
             command.Parameters.AddWithValue("@UserName", UserName);
             command.Parameters.AddWithValue("@Password", Password);
             command.Parameters.AddWithValue("@IsActive", IsActive);
-            
 
             try
             {
@@ -224,7 +256,14 @@ namespace DataDVLDLayer
             }
             catch (Exception ex)
             {
+                string sourceName = "DVLD_App";
 
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                EventLog.WriteEntry(sourceName, ex.Message, EventLogEntryType.Error);
             }
             finally
             {
@@ -252,7 +291,14 @@ namespace DataDVLDLayer
             }
             catch (Exception ex)
             {
+                string sourceName = "DVLD_App";
 
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                EventLog.WriteEntry(sourceName, ex.Message, EventLogEntryType.Error);
             }
             finally
             {
@@ -284,6 +330,15 @@ namespace DataDVLDLayer
             }
             catch (Exception ex)
             {
+                string sourceName = "DVLD_App";
+
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                EventLog.WriteEntry(sourceName, ex.Message, EventLogEntryType.Error);
+
                 isFound = false;
             }
             finally
@@ -318,6 +373,15 @@ namespace DataDVLDLayer
             }
             catch (Exception ex)
             {
+                string sourceName = "DVLD_App";
+
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                EventLog.WriteEntry(sourceName, ex.Message, EventLogEntryType.Error);
+
                 isFound = false;
             }
             finally
@@ -352,6 +416,15 @@ namespace DataDVLDLayer
             }
             catch (Exception ex)
             {
+                string sourceName = "DVLD_App";
+
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                EventLog.WriteEntry(sourceName, ex.Message, EventLogEntryType.Error);
+
                 isFound = false;
             }
             finally
@@ -362,7 +435,7 @@ namespace DataDVLDLayer
             return isFound;
         }
 
-        public static bool isAllowedForLogin(string UserName,string Password)
+        public static bool isAllowedForLogin(string UserName, string Password)
         {
             bool isAllowed = false;
 
@@ -385,8 +458,17 @@ namespace DataDVLDLayer
 
                 reader.Close();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
+                string sourceName = "DVLD_App";
+
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                EventLog.WriteEntry(sourceName, ex.Message, EventLogEntryType.Error);
+
                 isAllowed = false;
             }
             finally
@@ -427,6 +509,15 @@ namespace DataDVLDLayer
             }
             catch (Exception ex)
             {
+                string sourceName = "DVLD_App";
+
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                EventLog.WriteEntry(sourceName, ex.Message, EventLogEntryType.Error);
+
                 isAvailable = false;
             }
             finally
@@ -440,7 +531,7 @@ namespace DataDVLDLayer
 
 
         public static bool GetUserInfoByUserNameAndPassword(string UserName, string Password
-            ,ref int UserID, ref int PersonID, ref bool IsActive)
+            , ref int UserID, ref int PersonID, ref bool IsActive)
         {
             bool isFound = false;
             SqlConnection connection = new SqlConnection(clsConnection.ConnectionString);
@@ -479,6 +570,14 @@ namespace DataDVLDLayer
             }
             catch (Exception ex)
             {
+                string sourceName = "DVLD_App";
+
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                EventLog.WriteEntry(sourceName, ex.Message, EventLogEntryType.Error);
 
                 isFound = false;
             }

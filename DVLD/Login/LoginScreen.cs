@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessDVLDLayer;
 using DVLD.GlobalClass;
+using System.Diagnostics;
 
 namespace DVLD.Users
 {
@@ -64,6 +65,8 @@ namespace DVLD.Users
         {
             if (_VerifiedFillInfo())
             {
+
+
                 clsUser user = clsUser.GetUserInfoByUserNameAndPassword(textUserName.Text, textPassword.Text);
 
                 if (user != null)
@@ -92,10 +95,22 @@ namespace DVLD.Users
                     }
 
                     clsSettingLogin.CurretUser = user;
+
+                    string sourceName = "DVLD_App";
+
+                    if (!EventLog.SourceExists(sourceName))
+                    {
+                        EventLog.CreateEventSource(sourceName, "Application");
+                    }
+
+                    EventLog.WriteEntry(sourceName,$"The User : {user.UserName} Login"
+                        , EventLogEntryType.Information);
+
                     this.Hide();
                     MainDVLD frm = new MainDVLD(this);
                     frm.ShowDialog();
 
+                    
 
                 }
                 else

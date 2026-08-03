@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 
 namespace DataDVLDLayer
 {
@@ -34,7 +35,14 @@ namespace DataDVLDLayer
             }
             catch (Exception ex)
             {
+                string sourceName = "DVLD_App";
 
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                EventLog.WriteEntry(sourceName, ex.Message, EventLogEntryType.Error);
             }
             finally
             {
@@ -45,7 +53,7 @@ namespace DataDVLDLayer
         }
 
 
-        static public int DetainedLicenses(int LicenseID, DateTime DetainDate, 
+        static public int DetainedLicenses(int LicenseID, DateTime DetainDate,
             float FineFees, int CreatedByUserID)
         {
             int DetainID = -1;
@@ -87,6 +95,15 @@ namespace DataDVLDLayer
             }
             catch (Exception ex)
             {
+                string sourceName = "DVLD_App";
+
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                EventLog.WriteEntry(sourceName, ex.Message, EventLogEntryType.Error);
+
                 DetainID = -1;
             }
             finally
@@ -121,10 +138,19 @@ namespace DataDVLDLayer
             try
             {
                 connection.Open();
-                rowsAffected = command.ExecuteNonQuery(); 
+                rowsAffected = command.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
+                string sourceName = "DVLD_App";
+
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                EventLog.WriteEntry(sourceName, ex.Message, EventLogEntryType.Error);
+
                 return false;
             }
             finally
@@ -173,6 +199,15 @@ namespace DataDVLDLayer
             }
             catch (Exception ex)
             {
+                string sourceName = "DVLD_App";
+
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                EventLog.WriteEntry(sourceName, ex.Message, EventLogEntryType.Error);
+
                 isFound = false;
             }
             finally
@@ -223,6 +258,15 @@ namespace DataDVLDLayer
             }
             catch (Exception ex)
             {
+                string sourceName = "DVLD_App";
+
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                EventLog.WriteEntry(sourceName, ex.Message, EventLogEntryType.Error);
+
                 isFound = false;
             }
             finally

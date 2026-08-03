@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 
 namespace DataDVLDLayer
 {
@@ -35,6 +36,14 @@ namespace DataDVLDLayer
             }
             catch (Exception ex)
             {
+                string sourceName = "DVLD_App";
+
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                EventLog.WriteEntry(sourceName, ex.Message, EventLogEntryType.Error);
             }
             finally
             {
@@ -63,26 +72,28 @@ namespace DataDVLDLayer
 
                 if (reader.Read())
                 {
-
-                  
                     isFound = true;
 
                     CountryName = (string)reader["CountryName"];
-
-                    
                 }
                 else
                 {
-                    
                     isFound = false;
                 }
 
                 reader.Close();
-
-
             }
             catch (Exception ex)
             {
+                string sourceName = "DVLD_App";
+
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                EventLog.WriteEntry(sourceName, ex.Message, EventLogEntryType.Error);
+
                 isFound = false;
             }
             finally
@@ -112,13 +123,10 @@ namespace DataDVLDLayer
 
                 if (reader.Read())
                 {
-
                     // The record was found
                     isFound = true;
 
                     ID = (int)reader["CountryID"];
-
-                  
                 }
                 else
                 {
@@ -127,12 +135,18 @@ namespace DataDVLDLayer
                 }
 
                 reader.Close();
-
-
             }
             catch (Exception ex)
             {
-                //Console.WriteLine("Error: " + ex.Message);
+                string sourceName = "DVLD_App";
+
+                if (!EventLog.SourceExists(sourceName))
+                {
+                    EventLog.CreateEventSource(sourceName, "Application");
+                }
+
+                EventLog.WriteEntry(sourceName, ex.Message, EventLogEntryType.Error);
+
                 isFound = false;
             }
             finally
