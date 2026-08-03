@@ -8,6 +8,7 @@ namespace DataDVLDLayer
 {
     class clsConnection
     {
-        static public string ConnectionString = "Server=.;Database=DVLD;User id=sa;Password=123456;";
+        //Enter the database connection details here.
+        static public string ConnectionString = "Server=.;Database=Namedatabase;User id=id;Password=password;";
     }
 }
